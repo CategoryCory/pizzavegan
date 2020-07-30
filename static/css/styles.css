@@ -1,0 +1,16 @@
+body {
+    font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.jumbotron {
+    background-image: linear-gradient(rgba(50, 30, 0, 0.5), rgba(50, 30, 0, 0.5)), url("../images/banner-resized.jpg");
+}
+
+.lead {
+    font-size: 1.75em;
+}
