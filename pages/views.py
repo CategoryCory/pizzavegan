@@ -13,4 +13,4 @@ class RegisterPageView(SuccessMessageMixin, CreateView):
     form_class = ContactForm
     template_name = 'pages/register.html'
     success_url = reverse_lazy('pages:index')
-    success_message = 'It worked!!'
+    success_message = 'Success! Your submission has been received! You will receive an email confirmation with additional information and steps.'
