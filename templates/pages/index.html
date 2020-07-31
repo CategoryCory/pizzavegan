@@ -1,27 +1,41 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% block title %}{% endblock title %}
 
 {% block content %}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-2 text-white">Pizza Vegan Community</h1>
+            <h1 class="display-3 text-white">Pizza Vegan Community</h1>
             <p class="lead text-white">Vegan pizza at your fingertips&mdash;literally!</p>
         </div>
     </div>
-    <div class="container">
-        <h2>Welcome Pizzeria Owners!</h2>
+    <div class="container py-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h2 class="text-success mb-4">Welcome, Pizzeria Owners!</h2>
         <p>
             Are you interested in joining a national, cutting-edge vegan pizza promotion? Have a vegan pizza on your
             menu waiting to receive the attention it deserves?
         </p>
         <p>
             We have partnered with Tap The Table to promote your vegan pizza to consumers through Facebook during the
-            month September. You read that right, yes, all through Facebook. If you register, consumers will be able to
-            purchase your vegan pizza directly from Facebook as you will get to enjoy and experience Tap The Table for
-            free!
+            month of September. Yes, you read that right&mdash;all through Facebook. If you register, consumers will be able
+            to purchase your vegan pizza directly from Facebook as you will get to enjoy and experience Tap The Table
+            for free!
         </p>
+        <p>
+            If you'd like to sign up to learn more, click the button below and fill out the form!
+        </p>
+        <a href="{% url 'pages:register' %}" class="btn btn-outline-success btn-lg my-3">
+            Click Here to Sign Up
+        </a>
     </div>
 {% endblock content %}

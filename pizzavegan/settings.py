@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # Local
     'pages.apps.PagesConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
