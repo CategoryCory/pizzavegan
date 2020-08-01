@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['pizzavegan.com', '67.207.81.127', ]
+ALLOWED_HOSTS = ['pizzavegan.com', 'www.pizzavegan.com', '67.207.81.127', ]
 
 
 # Application definition
