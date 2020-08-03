@@ -21,4 +21,5 @@ class ContactForm(forms.ModelForm):
         }
         help_texts = {
             'is_subscriber': _('Please check if you are a current subscriber to PMQ Pizza Magazine.'),
+            'pizza_photo': _('Maximum file size: 5MB'),
         }
