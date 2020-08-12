@@ -7,12 +7,20 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="responsive-header-text text-white">Sign Up</h1>
-            <p class="lead text-white">Stay in the loop and find out more about Tap the Table!</p>
+            <p class="lead text-white">Sign up for Tap The Table, or register to find out more!</p>
         </div>
     </div>
     <div class="container pt-3 pb-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-7">
+                <p><strong>If you have a Facebook page</strong> and would like to sign up for Tap The Table, click the button
+                    below!</p>
+                <a href="https://m.me/PMQPizzaMag?ref=Sign-Up" class="btn btn-outline-success btn-lg btn-block">
+                    Click Here to Sign Up
+                </a>
+                <hr class="my-5">
+                <p class="text-muted"><strong>If you do not have a Facebook page right now,</strong> you can still
+                sign up to learn more! Please fill out the form below.</p>
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
