@@ -16,3 +16,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.restaurant_name
+
+
+class SurveyResponse(models.Model):
+    email = models.EmailField(max_length=200)
+    pizza_description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.email

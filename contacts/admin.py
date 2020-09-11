@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Contact
+from .models import Contact, SurveyResponse
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -9,4 +9,9 @@ class ContactAdmin(admin.ModelAdmin):
     list_per_page = 25
 
 
+class SurveyResponseAdmin(admin.ModelAdmin):
+    list_display = ['email', 'pizza_description', ]
+
+
 admin.site.register(Contact, ContactAdmin)
+admin.site.register(SurveyResponse, SurveyResponseAdmin)

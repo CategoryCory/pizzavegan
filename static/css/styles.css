@@ -31,3 +31,15 @@ body {
     letter-spacing: 2px;
     font-size: calc(2.5em + 1.5vw);
 }
+
+@media screen and (min-width: 768px) {
+    .responsive-border {
+        border-right: 2px solid #d0d0d0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .responsive-border {
+        border-bottom: 2px solid #d0d0d0;
+    }
+}

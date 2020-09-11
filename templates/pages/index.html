@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
 
 {% block title %}{% endblock title %}
 
@@ -9,7 +12,7 @@
             <p class="lead text-white">Vegan pizza at your fingertips&mdash;literally!</p>
         </div>
     </div>
-    <div class="container py-4">
+    <div class="container pb-3 pt-4">
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -20,25 +23,48 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <h2 class="text-success mt-2 mb-4">Welcome, Pizzeria Owners!</h2>
+        <h2 class="display-4 font-weight-bold text-success mt-2 mb-4">Welcome!</h2>
         <p>
-            Are you interested in joining a national, cutting-edge vegan pizza promotion? Have a vegan pizza on your
-            menu waiting to receive the attention it deserves?
+            Vegan pizza has never been more popular than it is now! 25% of customers are looking for vegan options in pizza,
+            but only 25% of pizzerias are offering it. PMQ Pizza Magazine is building a website community and national
+            campaign to bring more attention and consumers closer to vegan pizza!
         </p>
-        <p>
-            We have partnered with Tap The Table to promote your vegan pizza to consumers through Facebook during the
-            month of September. Yes, you read that right&mdash;all through Facebook. If you register, consumers will be able
-            to purchase your vegan pizza directly from Facebook as you will get to enjoy and experience Tap The Table
-            for free!
-        </p>
-        <p>
-            If you'd like to sign up for this promo (and Tap The Table), click the button below!
-        </p>
-        <a href="https://m.me/PMQPizzaMag?ref=Sign-Up" class="btn btn-outline-success btn-lg my-3">
-            Click here to Sign Up
-        </a>
+    </div>
+
     <hr>
-        <p>Don't have a Facebook page available right now? No problem!
-            <a href="{% url 'pages:register' %}" class="text-success">Click here to register.</a></p>
+
+    <div class="pt-3 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-5 col-lg-4 py-4 responsive-border">
+                <p>
+                    <strong>Are you vegan and obsessed with pizza?</strong> This will soon be the place for you! We're under
+                    construction, working to bring people like you closer to vegan pizza very soon!
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-outline-success btn-block">Sign Me Up</button>
+                </form>
+            </div>
+            <div class="col-10 col-md-5 col-lg-4 py-4">
+                <p><strong>Are you a pizzeria with a vegan pizza on their menu interested in joining a national,
+                        cutting-edge vegan pizza promotion?</strong></p>
+                <div class="d-flex justify-content-start align-items-start">
+                    <a href="https://tapthetable.io/"><img src="{% static 'images/tap-the-table-logo.svg' %}" width="50"
+                            height="70"></a>
+                    <p class="pl-3">
+                        If you have a Facebook page and would like to sign up for this promotion and try the Facebook
+                        digital ordering service, <a href="https://tapthetable.io/" class="text-success">Tap The Table</a>,
+                        click the button below!
+                    </p>
+                </div>
+                <a href="https://m.me/PMQPizzaMag?ref=Sign-Up" class="btn btn-outline-success btn-block my-3">
+                    Click here to Sign Up
+                </a>
+                <hr>
+                <p class="text-muted">Don't have a Facebook page available right now? No problem!
+                    <a href="{% url 'pages:register' %}" class="text-success">Click here to register.</a></p>
+            </div>
+        </div>
     </div>
 {% endblock content %}

@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from .models import Contact
+from .models import Contact, SurveyResponse
 
 
 class ContactForm(forms.ModelForm):
@@ -22,4 +22,19 @@ class ContactForm(forms.ModelForm):
         help_texts = {
             'is_subscriber': _('Please check if you are a current subscriber to PMQ Pizza Magazine.'),
             'pizza_photo': _('Maximum file size: 5MB'),
+        }
+
+
+class SurveyResponseForm(forms.ModelForm):
+
+    class Meta:
+        model = SurveyResponse
+        fields = ('email', 'pizza_description', )
+        labels = {
+            'email': _('If you\'d like to get a notification for our launch party, drop your email below:'),
+            'pizza_description': _('Also, if there is a vegan pizza you\'d like to recommend or boast about, '
+                                   'feel free to share it with us! Maybe it\'ll get featured in a future promotion!'),
+        }
+        widgets = {
+            'pizza_description': forms.Textarea(attrs={'rows': 3})
         }
