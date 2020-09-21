@@ -1,0 +1,8 @@
+<h2>This is the articles list page.</h2>
+<ul>
+    {% for article in article_list %}
+        <li>{{ article.title }}</li>
+    {% empty %}
+        <li>No articles yet.</li>
+    {% endfor %}
+</ul>
