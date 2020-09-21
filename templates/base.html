@@ -17,18 +17,40 @@
         <a class="navbar-brand" href="{% url 'pages:index' %}">
             <img src="{% static 'images/pizzavegan-color-small.png' %}" alt="PizzaVerse Logo" loading="lazy">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a href="{% url 'pages:index' %}" class="nav-item nav-link mr-3">Home</a>
-                <a href="{% url 'pages:tap_the_table' %}" class="nav-item nav-link mr-3">Tap The Table</a>
-                <a href="https://www.pmq.com" class="nav-item nav-link" target="_blank">PMQ Pizza Magazine</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{% url 'pages:index' %}" class="nav-item nav-link mr-3">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'pages:tap_the_table' %}" class="nav-item nav-link mr-3">Tap The Table</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.pmq.com" class="nav-item nav-link" target="_blank">PMQ Pizza Magazine</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome, {{ user.email }}!
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Log Out</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'account_login' %}" class="btn btn-success ml-3">Log In</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
     </nav>
+
     {% block content %}
     {% endblock content %}
 
