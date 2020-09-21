@@ -1,13 +1,13 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from .models import Contact, SurveyResponse
+from .models import TapTheTableResponse, SurveyResponse
 
 
-class ContactForm(forms.ModelForm):
+class TapTheTableForm(forms.ModelForm):
 
     class Meta:
-        model = Contact
+        model = TapTheTableResponse
         fields = ('restaurant_name', 'email_address', 'vegan_pizza_type', 'menu_description', 'facebook_page',
                   'pizza_photo', 'is_subscriber')
         labels = {

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Contact(models.Model):
+class TapTheTableResponse(models.Model):
     restaurant_name = models.CharField(max_length=200)
     email_address = models.EmailField(max_length=200)
     vegan_pizza_type = models.CharField(max_length=200)

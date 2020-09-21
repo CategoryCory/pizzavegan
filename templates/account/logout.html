@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} | Logout{% endblock title %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 d-flex flex-column align-items-center border rounded p-4">
+                <h2 class="font-weight-bold text-success">Log Out</h2>
+                <p>Are you sure you want to log out?</p>
+                <form method="post" class="w-100">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-success btn-block mt-4">Log Out</button>
+                </form>
+                <p class="small mt-4 w-100">Return to the
+                    <a href="{% url 'pages:index' %}" class="text-success">home page.</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
