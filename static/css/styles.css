@@ -4,15 +4,19 @@ html {
 }
 
 body {
-    font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 60px;
 }
 
-.jumbotron {
+h1, h2, h3, h4 {
+    font-weight: 900;
+}
+
+.jumbotron-bg {
     background-image: linear-gradient(rgba(50, 30, 0, 0.5), rgba(50, 30, 0, 0.5)), url("../images/banner-resized.jpg");
 }
 
-.lead {
+.jumbotron-lead {
     font-size: 1.75em;
 }
 
@@ -30,6 +34,29 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     font-size: calc(2.5em + 1.5vw);
+}
+
+.articles-post {
+    margin-bottom: 4rem;
+}
+
+.articles-post-title {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 2.5rem;
+}
+
+.articles-post-meta {
+    margin-bottom: 1.25rem;
+    color: #909090;
+}
+
+.articles-image {
+    display: block;
+    width: 400px;
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
