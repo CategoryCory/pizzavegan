@@ -1,3 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row justify-content-center">
+            <article class="col-10 col-md-7 col-lg-5 col-xl-4">
+                <div class="article-title mb-4">
+                    <h2 class="text-success display-4 font-weight-bold">{{ article.title }}</h2>
+                    <p class="lead h5">{{ article.subtitle }}</p>
+                </div>
+                <div class="article-header-image mb-4">
+                    <img src="{{ article.featured_image.url }}" class="rounded" />
+                    <p class="text-muted mt-3 border-bottom">{{ article.featured_image_caption }}</p>
+                </div>
+                <div class="article-body">
+                    <div class="my-3">
+                        {{ article.body }}
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+{% endblock content %}
 <h2>This is the article details page.</h2>
 <p>Article title: {{ article.title }}</p>
 <p>Article text: {{ article.body }}</p>

@@ -13,7 +13,7 @@ class Article(models.Model):
     ]
 
     title = models.CharField(max_length=200, unique=True)
-    subtitle = models.CharField(max_length=255, blank=True)
+    subtitle = models.CharField(max_length=255)
     slug = models.SlugField(max_length=200, unique=True)
     body = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='article_posts')

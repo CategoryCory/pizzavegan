@@ -1,43 +1,36 @@
 {% extends 'base.html' %}
 
+{% block title %} | Articles{% endblock title %}
+
 {% block content %}
-    <main class="container mt-5" role="main">
-        <div class="row">
-            <div class="col-md-8 articles-main">
-                <h3 class="pb-3 mb-4 font-italic border-bottom">
-                    PizzaVegan Articles
-                </h3>
-                {% for article in article_list %}
-                    <div class="articles-post">
-                        <img src="{{ article.featured_image.url }}" alt="" class="articles-image rounded">
-                        <p class="lead mt-2">{{ article.featured_image_caption }}</p>
-                        <h2 class="articles-post-title">
+    <main class="container my-5 px-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h1 class="font-italic">Articles from the PizzaVegan Staff</h1>
+                <hr>
+            </div>
+            {% for article in article_list %}
+                <article class="col-12 col-md-6 col-lg-4 my-4">
+                    <div class="articles-list-post">
+                        <img src="{{ article.featured_image.url }}" alt="{{ article.title }}" class="articles-list-image rounded" />
+                        <h4 class="articles-list-post-title">
                             <a href="{% url 'articles:article_detail' article.slug %}" class="text-success">
                                 {{ article.title }}
                             </a>
-                        </h2>
-                        <p class="articles-post-meta">Posted on {{ article.created_on|date:'F j, Y' }} by
+                        </h4>
+                        <p class="articles-list-post-meta mt-1">Posted on {{ article.created_on|date:'F j, Y' }} by
                             <a href="#" class="text-success">{{ article.author }}</a>
                         </p>
-                        {{ article.body|truncatewords:50 }}
+                        {{ article.subtitle }}
                         <br>
-                        <a href="{% url 'articles:article_detail' article.slug %}" class="btn btn-success mt-3">
+                        <a href="{% url 'articles:article_detail' article.slug %}" class="btn btn-success btn-block mt-3">
                             Read More
                         </a>
-                        <hr>
                     </div>
-                {% empty %}
-                    <p>Sorry, there are no articles at this time.</p>
-                {% endfor %}
-            </div>
-            <aside class="col-md-4 articles-sidebar">
-                <div class="p-3 mb-3 bg-light rounded">
-                    <h4 class="font-italic">About</h4>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet
-                        fermentum. Aenean lacinia bibendum nulla sed consectetur.
-                    </p>
-                </div>
-            </aside>
+                </article>
+            {% empty %}
+                <p>Sorry, there are no articles at this time.</p>
+            {% endfor %}
         </div>
     </main>
 {% endblock content %}

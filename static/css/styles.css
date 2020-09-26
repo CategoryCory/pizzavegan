@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 60px;
 }
 
@@ -36,27 +36,62 @@ h1, h2, h3, h4 {
     font-size: calc(2.5em + 1.5vw);
 }
 
-.articles-post {
-    margin-bottom: 4rem;
+.articles-list-post {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
 }
 
-.articles-post-title {
+.articles-list-post-title {
     margin-top: 1rem;
     margin-bottom: 0.25rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
-.articles-post-meta {
+.articles-list-post-title a {
+    padding-bottom: 4px;
+    position: relative;
+}
+
+.articles-list-post-title a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #28a745;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+}
+
+.articles-list-post-title a:hover {
+    text-decoration: none;
+    color: #28a745 !important;
+}
+
+.articles-list-post-title a:hover::before {
+    transform: scaleX(1);
+}
+
+.articles-list-post-meta {
     margin-bottom: 1.25rem;
     color: #909090;
 }
 
-.articles-image {
+.articles-list-image {
     display: block;
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: 250px;
     background-position: center center;
-    background-size: cover;
+    object-fit: cover;
+}
+
+.article-header-image img {
+    max-width: 100%;
 }
 
 @media screen and (min-width: 768px) {
