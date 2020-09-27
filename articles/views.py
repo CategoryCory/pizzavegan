@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from . import models
+from . import models, forms
 
 
 class ArticleListView(ListView):
@@ -17,7 +17,7 @@ class ArticleDetailView(DetailView):
 class ArticleCreateView(LoginRequiredMixin, CreateView):
 
     model = models.Article
-    fields = ['title', 'subtitle', 'slug', 'body', 'featured_image', 'featured_image_caption', 'status', ]
+    form_class = forms.CreateArticleForm
     login_url = 'account_login'
 
     def form_valid(self, form):

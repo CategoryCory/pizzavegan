@@ -14,7 +14,7 @@
                 </div>
                 <div class="article-body">
                     <div class="my-3">
-                        {{ article.body }}
+                        {% autoescape off %}{{ article.body }}{% endautoescape %}
                     </div>
                 </div>
             </article>

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'tinymce',
 
     # Local
     'pages.apps.PagesConfig',
