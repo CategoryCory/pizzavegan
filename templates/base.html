@@ -28,25 +28,25 @@
                     <a href="{% url 'pages:index' %}" class="nav-item nav-link mr-3">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'pages:tap_the_table' %}" class="nav-item nav-link mr-3">Tap The Table</a>
+                    <a href="{% url 'pages:tap_the_table' %}" class="nav-item nav-link mr-3">Register</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://www.pmq.com" class="nav-item nav-link" target="_blank">PMQ Pizza Magazine</a>
                 </li>
                 {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Welcome, {{ user.email }}!
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Log Out</a>
-                        </div>
-                    </li>
+{#                    <li class="nav-item dropdown">#}
+{#                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
+{#                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            Welcome, {{ user.email }}!#}
+{#                        </a>#}
+{#                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                            <a href="{% url 'account_logout' %}" class="dropdown-item">Log Out</a>#}
+{#                        </div>#}
+{#                    </li>#}
                 {% else %}
-                    <li class="nav-item">
-                        <a href="{% url 'account_login' %}" class="btn btn-success ml-3">Log In</a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'account_login' %}" class="btn btn-success ml-3">Log In</a>#}
+{#                    </li>#}
                 {% endif %}
             </ul>
         </div>

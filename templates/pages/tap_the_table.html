@@ -23,14 +23,12 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-                <p><strong>If you have a Facebook page</strong> and would like to sign up for Tap The Table,
-                    click the button below!</p>
+                <p><strong>If you have a Facebook page</strong> and would like to sign up through Facebook Messenger, click the button below!</p>
                 <a href="https://m.me/PMQPizzaMag?ref=Sign-Up" class="btn btn-outline-success btn-lg btn-block">
                     Click Here to Sign Up
                 </a>
                 <hr class="my-5">
-                <p class="text-muted"><strong>If you do not have a Facebook page right now,</strong> you can still
-                sign up to learn more! Please fill out the form below.</p>
+                <p class="text-muted"><strong>If you do not have Facebook available right now,</strong> just fill in the form below.</p>
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form|crispy }}
